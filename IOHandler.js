@@ -1,21 +1,7 @@
-var freeze = false;
-function onMouseClick(event){
-    freeze = !freeze;
+"use strict";
+
+export function setupIOHandlers(onMouseClick, onKeydown, onKeyup) {
+  document.addEventListener("click", onMouseClick, false);
+  document.addEventListener("keydown", onKeydown, false);
+  document.addEventListener("keyup", onKeyup, false);
 }
-
-document.addEventListener('click', onMouseClick, false);
-
-function onKeydown(event){
-    if(event.keyCode == 32){
-        freeze = true;
-    }
-}
-
-function onKeyup(event){
-    if(event.keyCode == 32){
-        freeze = false;
-    }
-}
-
-document.addEventListener('keydown', onKeydown, false);
-document.addEventListener('keyup', onKeyup, false);
